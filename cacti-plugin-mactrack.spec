@@ -1,7 +1,7 @@
 %define		namesrc	mactrack	
 %include	/usr/lib/rpm/macros.perl
 Summary:	MacTrack - Cacti plugin to track device MAC/IP addresses and ports
-Summary(pl):	MacTrack - wtyczka Cacti do ¶ledzenia adresów MAC/IP i portów urz±dzeñ
+Summary(pl.UTF-8):   MacTrack - wtyczka Cacti do Å›ledzenia adresÃ³w MAC/IP i portÃ³w urzÄ…dzeÅ„
 Name:		cacti-plugin-mactrack
 Version:	0.0.1b
 #this is Pre-BETA version
@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MacTrack - Cacti plugin to track device MAC/IP addresses and ports.
 
-%description -l pl
-MacTrack - wtyczka Cacti do ¶ledzenia adresów MAC/IP i portów
-urz±dzeñ.
+%description -l pl.UTF-8
+MacTrack - wtyczka Cacti do Å›ledzenia adresÃ³w MAC/IP i portÃ³w
+urzÄ…dzeÅ„.
 
 %prep
 %setup -q -n %{namesrc}
