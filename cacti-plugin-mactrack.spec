@@ -11,6 +11,7 @@ Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.zip
 # Source0-md5:	635bb1df81bf9c0f28368438c4dcba42
 URL:		http://cactiusers.org/wiki/MacTrackDocs
 BuildRequires:	rpm-perlprov
+BuildRequires:	unzip
 Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
