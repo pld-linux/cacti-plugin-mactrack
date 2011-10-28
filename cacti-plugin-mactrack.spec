@@ -1,18 +1,24 @@
+# TODO
+# - use system jquery
 %define		plugin mactrack
-%include	/usr/lib/rpm/macros.perl
-Summary:	MacTrack - Cacti plugin to track device MAC/IP addresses and ports
+%define		php_min_version 5.0.0
+%include	/usr/lib/rpm/macros.php
+Summary:	End Device Port Tracker and General Network Toolkit
 Summary(pl.UTF-8):	MacTrack - wtyczka Cacti do śledzenia adresów MAC/IP i portów urządzeń
-Name:		cacti-plugin-mactrack
-Version:	1.1
+Name:		cacti-plugin-%{plugin}
+Version:	2.9
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.zip
-# Source0-md5:	635bb1df81bf9c0f28368438c4dcba42
-URL:		http://cactiusers.org/wiki/MacTrackDocs
-BuildRequires:	rpm-perlprov
-BuildRequires:	unzip
+Source0:	http://docs.cacti.net/_media/plugin:mactrack-v%{version}-1.tgz
+# Source0-md5:	397e91c4c2059068f39abfb5b84b24ca
+URL:		http://docs.cacti.net/plugin:mactrack
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	cacti
+Requires:	cacti(pia) >= 2.0
+Requires:	php-common >= 4:%{php_min_version}
+Requires:	php-date
+Requires:	php-pcre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,17 +33,18 @@ MacTrack - wtyczka Cacti do śledzenia adresów MAC/IP i portów
 urządzeń.
 
 %prep
-%setup -q -c
+%setup -qc
+mv %{plugin}/{LICENSE,README,docs} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{plugindir}
-cp -a . $RPM_BUILD_ROOT%{plugindir}
+cp -a %{plugin}/* $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{plugindir}/docs/*
+%doc README docs/CHANGELOG
 %{plugindir}
