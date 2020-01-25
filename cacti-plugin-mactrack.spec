@@ -2,7 +2,6 @@
 # - use system jquery
 %define		plugin mactrack
 %define		php_min_version 5.0.0
-%include	/usr/lib/rpm/macros.php
 Summary:	End Device Port Tracker and General Network Toolkit
 Summary(pl.UTF-8):	MacTrack - wtyczka Cacti do śledzenia adresów MAC/IP i portów urządzeń
 Name:		cacti-plugin-%{plugin}
