@@ -6,7 +6,7 @@ Summary:	End Device Port Tracker and General Network Toolkit
 Summary(pl.UTF-8):	MacTrack - wtyczka Cacti do śledzenia adresów MAC/IP i portów urządzeń
 Name:		cacti-plugin-%{plugin}
 Version:	2.9
-Release:	7
+Release:	8
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://docs.cacti.net/_media/plugin:mactrack-v%{version}-1.tgz
